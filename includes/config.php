@@ -28,7 +28,7 @@ else {
 $config["oktaOrg"] = "tomco";
 
 // name of fake company
-$config["name"] = "Avid";
+$config["name"] = "VOE";
 
 // If your localhost is running on a specific port, indicate it here
 $config["localhost"] = "localhost:8888";
@@ -59,7 +59,7 @@ $apiKeyPath = "/usr/local/keys/oktaAPI.txt";
 // you can supply a local path here or a URI
 // the value will be tested with fopen()
 // if fopen() fails the value will be prepended with $config["webHome"]
-$logoPath = "images/avidLogo.png"; 
+$logoPath = "images/logo.png"; 
 
 $bgImagePath = "images/bgImage.jpg";
 
