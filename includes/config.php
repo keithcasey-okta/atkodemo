@@ -46,7 +46,7 @@ $config["group"]["sfChatter"]["id"] = "00goxo1ifVuBg7YKQ1t6";
 $config["group"]["withMFA"]["id"] = "00gnv1elhvYu03OLh1t6";
 
 // atkoDemoUsersWithEmail
-$config["group"]["withEmail"]["id"] = "00gnv4sf0vkoLWiC21t6";
+$config["group"]["withEmail"]["id"] = "00gryn1u5zdvao3u81t6";
 
 // atkodDemoUsersOktaAdmin
 $config["group"]["okta"]["id"] = "00gnv0lbm756RjxT61t6";
@@ -79,7 +79,7 @@ $idps[] = $google;
 // The list of apps that should be displayed in the UI.
 // This prevents "junk" apps from cluttering up the user's list of apps
 
-$appsWhitelist = ["salesforce"];
+$appsWhitelist = ["salesforce", "zendesk"];
 $config["appsWhitelist"] = json_encode($appsWhitelist);
 
 /************************************************************************/

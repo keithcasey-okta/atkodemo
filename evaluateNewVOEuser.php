@@ -2,8 +2,6 @@
 
 include "includes/includes.php";
 
-// echo json_encode($_POST);
-
 $userID = $_POST["userID"];
 $login = $_POST["login"];
 $password = $_POST["password"];
@@ -43,7 +41,20 @@ $jsonResult = curl_exec($curl);
 
 /*******************************************/
 
-/**************** AUTHENTICATE USER **************************/
+/************ACTIVATE THE USER *************/
+
+$url = $config["apiHome"] . "/users/" . $userID . "/lifecycle/activate";
+
+curl_setopt_array($curl, array(
+	CURLOPT_POST => TRUE,
+	CURLOPT_HTTPHEADER => array("Authorization: SSWS $apiKey ", "Accept: application/json", "Content-Type: application/json"),
+	CURLOPT_RETURNTRANSFER => TRUE,
+	CURLOPT_URL => $url,
+));
+
+$jsonResult = curl_exec($curl);
+
+/****** AUTHENTICATE THE USER **************/
 
 $curl = curl_init();
 
@@ -67,9 +78,6 @@ $jsonResult = curl_exec($curl);
 $result = json_decode($jsonResult, TRUE);
 
 $cookieToken = $result["cookieToken"];
-
-// echo "<p>" . $jsonResult;
-
 
 /**************** REDIRECT USER *******************************/
 

@@ -2,8 +2,6 @@
 
 include "includes/includes.php";
 
-echo json_encode($_GET);
-
 $userID = $_GET["userID"];
 $code = $_GET["activationCode"];
 $userType = $_GET["userType"];
@@ -24,10 +22,6 @@ $jsonResult = curl_exec($curl);
 
 $userData = json_decode($jsonResult, TRUE);
 
-echo "<p>";
-
-echo $jsonResult;
-
 if ($code == $userData["profile"]["activationCode"]) {
 	// echo "<p>Code is good.";
 }
@@ -39,7 +33,8 @@ else {
 $login = $userData["profile"]["login"];
 
 if ($userType == "pro") {
-	echo "<p>Please give us some more information about yourself.";
+	echo "<p>Thank you for registering with VOE!</p>";
+	echo "<p>Please give us some more information about yourself, and set up a password.</p>";
 
 	$output = "<form action = 'evaluateNewVOEuser.php' method = 'POST'>";
 	$output .= "<input type = 'text' placeholder = 'mobile phone' name = 'phone'></input>";
